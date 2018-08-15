@@ -13,19 +13,10 @@ import { Component } from '@angular/core';
       <div>
       {{ isHappy ? ':)' : ':(' }}
     </div>
-    <button (click)="handleClick()">
-    Change Name
+    <button (click)="handleClick(username.value)">
+    Get Value
     </button>
-    <input
-      type="text"
-      [ngModel]="title"
-      (ngModelChange)="handleChange($event)"
-      >
-      <input
-      type="text"
-      [(ngModel)]="title"
-      >
-
+    <input type="text" #username>
     <div> {{ title }} </div>
     </div>
   `
@@ -39,11 +30,7 @@ export class AppComponent {
     this.title = 'Saran';
   }
 
-  handleChange(value: string) {
-    this.title = value;
-  }
-
-  handleClick() {
-    this.title = "Saravanan RamuShanmugam";
+  handleClick(value: string) {
+    console.log(value);
   }
 }
